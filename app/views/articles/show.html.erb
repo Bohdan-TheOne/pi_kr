@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body class="bg-light">
+    <%= render "header" %>
+
+    <div class="bg-light d-flex justify-content-center">
+        <div class="w-50 mt-5 pt-5 d-block">
+            <div style="box-shadow: 0px 5px 5px -1px #eee" class="md-5 p-3">
+                <div class="d-flex justify-content-between">
+                    <h1 class="d-inline"><%= @article.title %></h1>
+                    <div class="d-inline float-lg-left">
+                        <a class="btn btn-outline-primary" href="<%= edit_article_path(@article) %>" role=" button">Edit</a>
+                        <a class="btn btn-outline-primary" href="<%= (@article) %>" role=" button">Delete</a>
+                    </div>
+                </div>
+                <h5><%= @article.body %></h5>
+            </div>
+            <div>
+                <div style="box-shadow: 0px 5px 5px -1px #eee" class="md-5 p-3">
+                    <h3>Comments</h3>
+                    <%= render @article.comments %>
+                </div>
+                <div style="box-shadow: 0px 5px 5px -1px #eee" class="md-5 p-3">
+                    <%= render 'comments/form' %>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

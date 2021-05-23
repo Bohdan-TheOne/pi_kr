@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%= render "header" %>
+
+    <div class="bg-light d-flex justify-content-center">
+        <div class="w-50 mt-5 pt-5 d-block">
+            <div class="my-3 p-3 bg-white rounded" style="box-shadow: 0px 5px 5px -1px #ddd">
+                <form action="/articles" accept-charset="UTF-8" method="post">
+                    <input type="hidden" name="authenticity_token" value="...">
+
+                    <div>
+                        <label for="article_title">Title</label><br>
+                        <input type="text" name="article[title]" id="article_title">
+                    </div>
+
+                    <div>
+                        <label for="article_body">Body</label><br>
+                        <textarea name="article[body]" id="article_body"></textarea>
+                    </div>
+                    <label for="sel1">Select list:</label>
+                    <select class="form-select w-25 m-2 margin-left-0" aria-label="Default select example">
+                        <option selected value="public">public</option>
+                        <option value="private">private</option>
+                        <option value="archived">archived</option>
+                    </select>
+                    <div>
+                        <input type="submit" name="commit" value="Create Article" data-disable-with="Create Article">
+                    </div>
+                </form>
+            </div>
+
+            <% @articles.each do |article| %>
+            <% unless article.archived? %>
+            <a class="text-dark text-decoration-none" href="<%= article_path(article) %>">
+                <div class="my-3 p-3 bg-white rounded" style="box-shadow: 0px 5px 5px -1px #ddd">
+                    <div class="d-flex justify-content-between">
+                        <h1 class="d-inline"><%= article.title %></h1>
+                        <div class="d-inline float-lg-left">
+                            <%= link_to "Edit", edit_article_path(article), class: "btn btn-outline-primary" %>
+                            <%= link_to "Destroy", article_path(article), class: "btn btn-outline-primary",
+                                    method: :delete,
+                                    data: { confirm: "Are you sure?" } %>
+                        </div>
+                    </div>
+                    <div>
+                        <p><%= article.body %></p>
+                    </div>
+                </div>
+            </a>
+            <% end %>
+            <% end %>
+        </div>
+    </div>
+
+</body>
+
+</html>
