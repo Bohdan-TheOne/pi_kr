@@ -1,4 +1,5 @@
 <div class="p-2 d-flex justify-content-between">
+    <% if comment.commenter %>
     <div>
         <strong><%= comment.commenter %>:</strong>
         <%= comment.body %>
@@ -9,5 +10,6 @@
                 method: :delete,
                 data: { confirm: "Are you sure?" } %>
     </div>
+    <% end %>
     <% end %>
 </div>
