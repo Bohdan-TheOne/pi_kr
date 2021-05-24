@@ -12,6 +12,7 @@
 
     <div class="bg-light d-flex justify-content-center">
         <div class="w-50 d-block">
+            <% if current_user %>
             <div class="my-3 p-3 bg-white rounded" style="box-shadow: 0px 5px 5px -1px #ddd">
                 <form action="/articles" accept-charset="UTF-8" method="post">
                     <input type="hidden" name="authenticity_token" value="...">
@@ -34,6 +35,11 @@
                     </div>
                 </form>
             </div>
+            <% else %>
+            <div class="alert alert-light" role="alert">
+                Login to post your articles.
+            </div>
+            <% end %>
 
             <% @articles.each do |article| %>
             <% unless article.archived? %>
