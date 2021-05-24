@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: %i[new edit create update destroy]
+  skip_before_action :verify_authenticity_token
 
   def index
     authorize Article
