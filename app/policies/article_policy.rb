@@ -4,7 +4,11 @@ class ArticlePolicy < ApplicationPolicy
     end
     
     def show?
-        author? || record.public?
+        record.public? || author?
+    end
+        
+    def create?
+        !!user
     end
     
     def update?
@@ -17,6 +21,7 @@ class ArticlePolicy < ApplicationPolicy
 
 private
     def author?
+        return false unless user
         record.author_id == user.id
     end
 end
