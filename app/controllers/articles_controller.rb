@@ -1,9 +1,8 @@
 class ArticlesController < ApplicationController
-  #before_action :authenticate_user!, only: %i[new edit create update destroy]
-
+  before_action :authenticate_user!, only: %i[new edit create update destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.order(created_at: :desc).includes(:author)
   end
 
   def show
