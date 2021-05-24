@@ -1,6 +1,6 @@
 class CommentPolicy < ApplicationPolicy
     def create?
-        !!user
+        logged_in?
     end    
     
     def destroy?

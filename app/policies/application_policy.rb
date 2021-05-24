@@ -49,13 +49,14 @@ class ApplicationPolicy
 
 private
 
+  def logged_in?
+    !!user
+  end
   def admin?
-    return false unless user
-    user.admin?
+    logged_in? && user.admin?
   end
   def moder?
-    return false unless user
-    user.moder?
+    logged_in? && user.moder?
   end
 
 end
