@@ -1,45 +1,33 @@
-<html lang="en">
+<%= render "header" %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body class="bg-light">
-    <%= render "header" %>
-
-    <div class="bg-light d-flex justify-content-center">
-        <div class="w-50 d-block">
-            <div style="box-shadow: 0px 5px 5px -1px #eee" class="md-5 p-3">
-                <div class="d-flex justify-content-between">
-                    <h1 class="d-inline"><%= @article.title %></h1>
-                    <div class="d-inline float-lg-left">
-                        <% if policy(@article).update? %>
-                        <a class="btn btn-outline-primary" href="<%= edit_article_path(@article) %>" role=" button">Edit</a>
-                        <% end %>
-                        <% if policy(@article).destroy? %>
-                        <%= link_to "Destroy", article_path(@article), class: "btn btn-outline-danger",
-                                    method: :delete,
-                                    data: { confirm: "Are you sure?" } %>
-                        <% end %>
-                    </div>
+<div class="bg-light d-flex justify-content-center">
+    <div class="w-50 d-block">
+        <div style="box-shadow: 0px 5px 5px -1px #eee" class="md-5 p-3">
+            <div class="d-flex justify-content-between">
+                <h1 class="d-inline"><%= @article.title %></h1>
+                <div class="d-inline float-lg-left">
+                    <% if policy(@article).update? %>
+                    <a class="btn btn-outline-primary" href="<%= edit_article_path(@article) %>" role=" button">Edit</a>
+                    <% end %>
+                    <% if policy(@article).destroy? %>
+                    <%= link_to "Destroy", article_path(@article), class: "btn btn-outline-danger",
+                                method: :delete,
+                                data: { confirm: "Are you sure?" } %>
+                    <% end %>
                 </div>
-                <h5><%= @article.body %></h5>
             </div>
-            <div>
-                <% if current_user %>
-                <div style="box-shadow: 0px 5px 5px -1px #eee" class="md-5 p-3">
-                    <%= render 'comments/form' %>
-                </div>
-                <% end %>
-                <div style="box-shadow: 0px 5px 5px -1px #eee" class="md-5 p-3">
-                    <h3>Comments</h3>
-                    <%= render @article.comments %>
-                </div>
+            <h5><%= @article.body %></h5>
+        </div>
+        <div>
+            <% if current_user %>
+            <div style="box-shadow: 0px 5px 5px -1px #eee" class="md-5 p-3">
+                <%= render 'comments/form' %>
+            </div>
+            <% end %>
+            <div style="box-shadow: 0px 5px 5px -1px #eee" class="md-5 p-3">
+                <h3>Comments</h3>
+                <%= render @article.comments %>
             </div>
         </div>
-</body>
-
-</html>
+    </div>
+</div>

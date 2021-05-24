@@ -1,20 +1,7 @@
-<html lang="en">
+<%= render "header" %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <%= render "header" %>
-
-    <div class="bg-light d-flex justify-content-center">
-        <div class="w-50 mt-5 pt-5 d-block">
-            <%= render "form", article: @article %>
-        </div>
+<div class="bg-light d-flex justify-content-center">
+    <div class="w-50 mt-5 pt-5 d-block">
+        <%= render "form", article: @article %>
     </div>
-</body>
-
-</html>
+</div>
