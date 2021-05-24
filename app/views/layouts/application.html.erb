@@ -12,9 +12,19 @@
 </head>
 
 <body class="bg-light">
-    <br /><br />
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <br /><br /><br />
+    <div class="d-flex justify-content-center">
+        <% if !!alert %>
+        <div class="alert alert-danger w-50" role="alert">
+            <%= alert %>
+        </div>
+        <% end %>
+        <% if !!notice %>
+        <div class="alert alert-info w-50" role="alert">
+            <%= notice %>
+        </div>
+        <% end %>
+    </div>
     <%= yield %>
 </body>
 
