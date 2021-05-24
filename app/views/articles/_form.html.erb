@@ -1,18 +1,23 @@
 <div class="my-3 p-3 bg-white rounded" style="box-shadow: 0px 5px 5px -1px #ddd">
     <%= form_with model: article do |form| %>
     <div class="form-group">
-        <%= form.label :title %><br>
+        <div>Thee</div>
         <%= form.text_field :title , class: "form-control"%>
-        <% article.errors.full_messages_for(:title).each do |message| %>
-        <div><%= message %></div>
+        <% article.errors.full_messages_for(:title).each do |message|%>
+        <div class="alert alert-warning p-1 mt-1 mb-0" role="alert">
+            <div><%= message %></div>
+        </div>
         <% end %>
+        <br />
     </div>
 
     <div class="form-group">
-        <%= form.label :body %><br>
-        <%= form.text_area :body , class: "form-control"%><br>
+        <div>What is on your mind?</div>
+        <%= form.text_area :body , class: "form-control"%>
         <% article.errors.full_messages_for(:body).each do |message| %>
-        <div><%= message %></div>
+        <div class="alert alert-warning p-1 mt-1 mb-0" role="alert">
+            <div><%= message %></div>
+        </div>
         <% end %>
     </div>
 
@@ -25,6 +30,6 @@
         <div>
             <%= form.submit class: "btn btn-outline-primary" %>
         </div>
-        </div>
+    </div>
     <% end %>
 </div>
