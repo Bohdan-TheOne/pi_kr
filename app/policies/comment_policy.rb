@@ -4,7 +4,7 @@ class CommentPolicy < ApplicationPolicy
     end    
     
     def destroy?
-        commenter?
+        commenter? || admin? || moder?
     end
 
 private

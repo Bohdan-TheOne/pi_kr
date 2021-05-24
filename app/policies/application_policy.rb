@@ -46,4 +46,16 @@ class ApplicationPolicy
       scope.all
     end
   end
+
+private
+
+  def admin?
+    return false unless user
+    user.admin?
+  end
+  def moder?
+    return false unless user
+    user.moder?
+  end
+
 end

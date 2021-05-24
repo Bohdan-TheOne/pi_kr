@@ -4,19 +4,19 @@ class ArticlePolicy < ApplicationPolicy
     end
     
     def show?
-        record.public? || author?
+        record.public? || author? || admin?
     end
         
     def create?
-        !!user
+        !!user || admin?
     end
     
     def update?
-        author?
+        author? || admin?
     end
     
     def destroy?
-        author?
+        author? || admin?
     end
 
 private
