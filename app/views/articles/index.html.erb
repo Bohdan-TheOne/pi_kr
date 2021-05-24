@@ -27,7 +27,6 @@
                         <select class=" form-select w-25 margin-left-0" aria-label="Default select example" class="form-select">
                             <option selected value="public">public</option>
                             <option value="private">private</option>
-                            <option value="archived">archived</option>
                         </select>
                         <div>
                             <input type="submit" name="commit" value="post" data-disable-with="Create Article" class="btn btn-outline-primary">
@@ -51,9 +50,6 @@
                         <h1 class="d-inline"><%= article.title %></h1>
                         <div class="d-inline float-lg-left">
                         </div>
-                    </div>
-                    <div>
-                        <p><%= article.body %></p>
                     </div>
                 </div>
             </a>

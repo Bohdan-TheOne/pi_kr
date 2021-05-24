@@ -20,7 +20,7 @@
     <div class="d-flex justify-content-between m-2">
         <div class="form-group">
             <%= form.label :status %>
-            <%= form.select :status, ['public', 'private', 'archived'], selected: 'public', class: "form-select"%>
+            <%= form.select :status, ['public', 'private'], selected: 'public', class: "form-select"%>
         </div>
         <div>
             <%= form.submit class: "btn btn-outline-primary" %>
