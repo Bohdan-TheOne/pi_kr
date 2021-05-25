@@ -17,6 +17,9 @@
                 </div>
             </div>
             <h5><%= @article.body %></h5>
+            <% if @article.image.attached? %>
+            <%= image_tag @article.image, class: "card-img-top" %>
+            <% end %>
             <div class="d-flex justify-content-end">
                 By <%= @article.author.username %>
             </div>

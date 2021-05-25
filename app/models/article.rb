@@ -2,6 +2,7 @@ class Article < ApplicationRecord
     belongs_to :author, class_name: 'User'
     include Visible
     has_many :comments, dependent: :destroy
+    has_one_attached :image
 
     paginates_per 5
 
