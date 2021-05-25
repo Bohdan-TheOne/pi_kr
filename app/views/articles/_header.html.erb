@@ -8,7 +8,7 @@
                 <%= link_to 'Private', private_articles_path, class: "btn btn-outline-secondary me-4"%>
                 <% end %>
                 <li class="nav-item me-2">
-                    <%= form.text_field :query, value: params[:query].squish , class: "form-control rounded", placeholder: "Search" %>
+                    <%= form.text_field :query, value: (params[:query]) ? params[:query].squish : '' , class: "form-control rounded", placeholder: "Search" %>
                 </li>
                 <li class="nav-item">
                     <%= form.submit "Search", class: "btn btn-outline-light" %>
