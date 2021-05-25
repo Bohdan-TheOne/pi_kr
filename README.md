@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### System Configuration
 
-Things you may want to cover:
+| **Ruby version**  | *2.7.2p137* |
+|-------------------|-------------|
+| **Rails version** | *6.1.3.2*   |
 
-* Ruby version
+### To Do List
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [x] Getting started - 5
+- [x] Different user autentification - 2
+- [x] Authorisation - 3 
+    * [x] Admin mode - 1
+        * [x] Comment Moderator
+- [x] Group filtration - 2
+- [ ] Teg filtration - 2
+- [ ] пагінація - 2
+- [x] Search - 2
+- [ ] Image upload - 2 
+    * [ ] Upload to S3 Cloud - 2
+- [ ] розгортання на heroku - 3
+- [ ] Tests - 1-3
+- [ ] JSON API + detached client - 2 
+    * [ ] JWT autentification - 2
+- [ ] Docker Compose - 3
