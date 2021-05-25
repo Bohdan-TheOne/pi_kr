@@ -1,6 +1,6 @@
 <%= render "header" %>
 
-<div class="bg-light d-flex justify-content-center">
+<div class="d-flex justify-content-center">
     <div class="w-50 d-block">
         <h1> Private <% unless current_user.admin? %> <%= current_user.username %>'s <% end %> articles </h1>
 

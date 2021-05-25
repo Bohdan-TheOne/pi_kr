@@ -1,8 +1,8 @@
-<div class="my-3 p-3 bg-white rounded" style="box-shadow: 0px 5px 5px -1px #ddd">
+<div class="my-3 p-3 bg-white rounded" style="box-shadow: 0px 5px 5px -1px #aaa">
     <%= form_with model: article do |form| %>
     <div class="form-group">
         <div>Theme</div>
-        <%= form.text_field :title , class: "form-control"%>
+        <%= form.text_field :title , class: "form-control rounded"%>
         <% article.errors.full_messages_for(:title).each do |message|%>
         <div class="alert alert-warning p-1 mt-1 mb-0" role="alert">
             <div><%= message %></div>
@@ -12,7 +12,7 @@
 
     <div class="form-group">
         <div>What is on your mind?</div>
-        <%= form.text_area :body , class: "form-control"%>
+        <%= form.text_area :body , class: "form-control rounded", rows: "3"%>
         <% article.errors.full_messages_for(:body).each do |message| %>
         <div class="alert alert-warning p-1 mt-1 mb-0" role="alert">
             <div><%= message %></div>
