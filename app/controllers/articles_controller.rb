@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   def index
     authorize Article
     @article = Article.new
-    @articles = Article.public_ar.ordered.include_author.search(params[:query])
+    @articles = Article.public_ar.ordered.include_author.search(params[:query]).page params[:page]
   end
 
   def private_articles

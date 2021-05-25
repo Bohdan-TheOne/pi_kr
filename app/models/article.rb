@@ -3,6 +3,8 @@ class Article < ApplicationRecord
     include Visible
     has_many :comments, dependent: :destroy
 
+    paginates_per 5
+
     validates :title, presence: true, length: { in: 3..30 }
     validates :body, presence: true, length: { in: 5..255 }
 

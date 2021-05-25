@@ -12,6 +12,9 @@
 
         <% unless @articles.count == 0 %>
         <%= render @articles %>
+        <div class="d-flex justify-content-center">
+            <%= paginate @articles %>
+        </div>
         <% else %>
         <div class="alert alert-info" role="alert">
             There are no articles that match specified parameter

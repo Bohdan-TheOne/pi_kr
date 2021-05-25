@@ -8,19 +8,19 @@
 
 ### To Do List
 
-- [x] Getting started - 5
-- [x] Different user autentification - 2
-- [x] Authorisation - 3 
-    * [x] Admin mode - 1
+- [x] Getting started
+- [x] Different user autentification
+- [x] Authorisation
+    * [x] Admin mode
         * [x] Comment Moderator
-- [x] Group filtration - 2
-- [ ] Teg filtration - 2
-- [ ] пагінація - 2
-- [x] Search - 2
-- [ ] Image upload - 2 
-    * [ ] Upload to S3 Cloud - 2
-- [ ] розгортання на heroku - 3
-- [ ] Tests - 1-3
-- [ ] JSON API + detached client - 2 
-    * [ ] JWT autentification - 2
-- [ ] Docker Compose - 3
+- [x] Group filtration
+- [ ] Teg filtration
+- [x] Pagination
+- [x] Search
+- [ ] Image upload 
+    * [ ] Upload to S3 Cloud
+- [ ] розгортання на heroku
+- [ ] Tests
+- [ ] JSON API + detached client
+    * [ ] JWT autentification
+- [ ] Docker Compose
