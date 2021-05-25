@@ -10,6 +10,12 @@
         </div>
         <% end %>
 
+        <% unless @articles.count == 0 %>
         <%= render @articles %>
+        <% else %>
+        <div class="alert alert-info" role="alert">
+            There are no articles that match specified parameter
+        </div>
+        <% end %>
     </div>
 </div>
