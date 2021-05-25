@@ -10,4 +10,9 @@ class Article < ApplicationRecord
     scope :private_ar, -> { public_ar("private") }
     scope :ordered, ->(direction = :desc) { order(created_at: direction) }
     scope :include_author, -> { includes(:author) }
+    scope :search, -> (query) do
+        return if query.blank?
+
+        where('title LIKE ? OR title LIKE ?', "#{query.squish}%", "% #{query.squish}%")
+    end
 end
