@@ -1,18 +1,26 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark flex-nowrap,">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">VizaĝoLib</a>
+        <a class="navbar-brand fs-3 py-0" href="/">VizaĝoLib</a>
         <div>
             <form>
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <% if user_signed_in? %>
+                    <%= link_to 'Private', private_articles_path, class: "btn btn-outline-secondary me-4"%>
+                    <% end %>
+                    <li class="nav-item me-2"><input class="form-control rounded" type="search" placeholder="Search" aria-label="Search"></li>
                     <li class="nav-item"><button class="btn btn-outline-light" type="submit">Search</button></li>
-                    <li class="nav-item"><input class="form-control me-2 mr-3" type="search" placeholder="Search" aria-label="Search"></li>
                 </ul>
             </form>
         </div>
         <div class="text-white collapse navbar-collapse justify-content-end" id="navbarCollapse">
             <div>
                 <% if user_signed_in? %>
-                <%= current_user.email %>
+                <%= current_user.username %>
+                <% if current_user.admin? %>
+                (admin)
+                <% elsif current_user.moder? %>
+                (moder)
+                <% end %>
                 <%= link_to 'Log out', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure?' }, class: "btn btn-outline-primary" %>
                 <% else %>
                 <%= link_to 'Log in', new_user_session_path, class: "btn btn-outline-primary"%>
