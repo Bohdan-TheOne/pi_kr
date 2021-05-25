@@ -4,7 +4,15 @@ class ArticlesController < ApplicationController
 
   def index
     authorize Article
-    @articles = Article.order(created_at: :desc).includes(:author)
+    @article = Article.new
+    @articles = Article.public_ar.ordered.include_author
+  end
+
+  def private_articles
+    authorize Article
+    
+    @articles = current_user.admin? ? Article.all : current_user.articles
+    @articles = @articles.private_ar.ordered.include_author
   end
 
   def show

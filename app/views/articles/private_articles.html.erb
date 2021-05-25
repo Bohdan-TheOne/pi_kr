@@ -1,0 +1,15 @@
+<%= render "header" %>
+
+<div class="bg-light d-flex justify-content-center">
+    <div class="w-50 d-block">
+        <h1> Private <% unless current_user.admin? %> <%= current_user.username %>'s <% end %> articles </h1>
+
+        <% unless @articles.count == 0 %>
+        <%= render @articles %>
+        <% else %>
+        <div class="alert alert-info" role="alert">
+            All your articles are public
+        </div>
+        <% end %>
+    </div>
+</div>

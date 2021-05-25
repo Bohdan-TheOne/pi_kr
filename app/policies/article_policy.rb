@@ -2,6 +2,10 @@ class ArticlePolicy < ApplicationPolicy
     def index?
         true
     end
+
+    def private_articles?
+        logged_in?
+    end
     
     def show?
         record.public? || author? || admin?
